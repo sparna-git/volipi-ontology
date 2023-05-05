@@ -1,0 +1,80 @@
+@prefix : <http://data.sparna.fr/ontologies/volipi#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/preferredNamespacePrefix> .
+@prefix volipi: <http://data.sparna.fr/ontologies/volipi#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@base <http://data.sparna.fr/ontologies/volipi> .
+
+<http://data.sparna.fr/ontologies/volipi> rdf:type owl:Ontology ;
+        dct:created "2023-05-05"^^xsd:date ;
+        dct:creator <mailto:thomas.francart@sparna.fr> ;
+        dct:license <https://creativecommons.org/publicdomain/zero/1.0/>;
+      vann:preferredNamespacePrefix "volipi" ;
+      rdfs:seeAlso <http://www.w3.org/ns/ui#> ;
+      rdfs:comment "A lightweight vocabulary to annotate linked data resources with presentation / user interface related information. Properties in this vocabulary can be used on individuals, classes, properties, shapes, etc. It is up to a user interface which wants to draw on them to pick how it uses this information. For example, the style attribute of a SHACL node shape may be picked to distinguish information about targets of that shape, or to display the shape itself, or to display property shapes of this node shape."@en ;
+      rdfs:label "VOcabulary for LInked data Presentation"@en ;
+      rdfs:label "VOcabulaire pour la Presentation des Données Liées"@en ;
+      skos:altLabel "volipi"@en .
+
+
+volipi:icon rdf:type owl:ObjectProperty ;
+           rdfs:comment "An icon resource associated with the resource."@en ;
+           rdfs:label "icon"@en ;
+           rdfs:seeAlso volipi:iconName ;
+.
+
+
+volipi:iconName rdf:type owl:DatatypeProperty ;
+           rdfs:comment "The name or code of an icon associated with the resource."@en ;
+           rdfs:seeAlso volipi:icon ;
+           rdfs:label "icon name"@en ;
+.
+
+
+volipi:color rdf:type owl:DatatypeProperty ;
+            rdfs:comment "A color associated with the ressource, typically to indicate the background or text color in which the resource should be displayed. Must be a valid CSS color string such as one could put in a CSS 'color' attribute."@en ;
+            rdfs:label "color"@en ;
+            owl:equivalentProperty <http://www.w3.org/ns/ui#color> ;
+            rdfs:datatype xsd:string ;
+.
+
+
+volipi:sequence rdf:type owl:DatatypeProperty ;
+               rdfs:comment "The sequence number in which this resource is arranged with respect to others."@en ;
+               rdfs:label "sequence number"@en ;
+               skos:closeMatch <http://open.vocab.org/terms/rank> ,
+                               <http://www.w3.org/ns/ui#seqeunce> ;
+.
+
+
+volipi:message rdf:type owl:DatatypeProperty ;
+              rdfs:comment "A user-oriented message, explanation, tooltip, etc. associated with the ressource."@en ;
+              rdfs:label "message"@en ;
+              skos:closeMatch <http://www.w3.org/ns/ui#prompt> ;
+.
+
+
+volipi:class rdf:type owl:DatatypeProperty ;
+            rdfs:comment "A CSS class associated with the resource, typically to indicate the CSS class to use when displaying the resource. Must be a valid CSS class name string such as one would put in an HTML 'class' attribute"@en ;
+            rdfs:label "CSS class"@en ;
+            rdfs:datatype xsd:string ;
+.
+
+
+volipi:style rdf:type owl:DatatypeProperty ;
+            rdfs:comment "A valid CSS style string such as one could put in an HTML 'style' attribute, e.g. 'color: red;'."@en ;
+            owl:equivalentProperty <http://www.w3.org/ns/ui#style> ;
+            rdfs:label "CSS style"@en ;
+            rdfs:datatype xsd:string ;
+.
+
+
+volipi:size rdf:type owl:DatatypeProperty ;
+            rdfs:label "size"@en;
+            rdfs:comment "A size indication associated with the resource."@en ;
+.

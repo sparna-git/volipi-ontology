@@ -1,0 +1,11 @@
+java -jar java-11-widoco-1.4.17-jar-with-dependencies.jar \
+-ontFile volipi.ttl \
+-outFolder volipi \
+-confFile volipi.properties \
+-rewriteAll \
+-lang en \
+-htaccess \
+-rewriteBase /ontologies \
+-excludeIntroduction \
+-uniteSections \
+-noPlaceHolderText
